@@ -1,0 +1,46 @@
+Buscar os nomes de todos os alunos que frequentam alguma turma do professor 'JOAO PEDRO'.
+
+	 SELECT   ALUNO.Nome , 
+	 FROM ALUNO
+	 WHERE  PROFESSOR.nome= "JOAO PEDRO"
+	 JOIN TURMA  ON  PROFESSOR.id=TURMA.PROFESSOR_id
+	 JOIN ALUNO ON TURMA.ALUNO_id=ALUNO.id   
+
+
+Buscar os dias da semana que tenham aulas da disciplina 'MATEMATICA'.
+
+	SELECT TURMA.dia_da_semana 
+	FROM TURMA
+	JOIN DISCIPLINA ON TURMA.DISCIPLINA_id=DISCIPLINA.id
+	WHERE DISCIPLINA.nome='MATEMATICA' 
+	
+	
+
+
+
+Buscar todos os alunos que frequentem aulas de 'MATEMATICA' e também 'FISICA'.
+
+	SELECT ALUNO.Nome , ALUNO.id
+	FROM ALUNO
+	JOIN DISCIPLINA ON TURMA.DISCIPLINA_id=DISCIPLINA.id
+	JOIN ALUNO ON  TURMA.ALUNO_id=ALUNO.id
+	WHERE DISCIPLINA.nome='MATEMATICA' AND DISCIPLINA.Nome='FISICA'
+
+
+
+Buscar as disciplinas que não tenham nenhuma turma.
+	SELECT DISCIPLINA.nome, DISCIPLINA.id
+	FROM DISCIPLINA
+	WHERE TURMA.DISCIPLINA_id <>(DISCIPLINA.id)
+	
+
+Buscar os alunos que frequentem aulas de 'MATEMATICA' exceto os que frequentem 'QUIMICA'.
+	SELECT ALUNO.Nome , ALUNO.id
+	FROM ALUNO
+	JOIN DISCIPLINA ON TURMA.DISCIPLINA_id=DISCIPLINA.id
+	JOIN ALUNO ON  TURMA.ALUNO_id=ALUNO.id
+	
+	WHERE DISCIPLINA.nome='MATEMATICA' AND DISCIPLINA.Nome<>('FISICA')
+		
+		
+		
