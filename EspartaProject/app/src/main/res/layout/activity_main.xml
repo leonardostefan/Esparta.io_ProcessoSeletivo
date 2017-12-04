@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="168dp"
+    tools:context="com.stefan.leonardo.espartaproject.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Task:" />
+
+                <EditText
+                    android:id="@+id/edtValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAdicionar"
+                    android:layout_width="285dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Adicionar Tarefa" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/nbrExclude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    android:id="@+id/btnAlterar"
+                    android:layout_width="285dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="Alterar situação" />
+
+                <Button
+                    android:id="@+id/btnExcluir"
+                    android:layout_width="285dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Excluir" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbl_pendente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pendentes" />
+
+            <ListView
+                android:id="@+id/lstPendente"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="4"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false"
+                android:scrollbars="horizontal|vertical">
+
+            </ListView>
+
+            <TextView
+                android:id="@+id/lbl_Concluidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Concluidos" />
+
+            <ListView
+                android:id="@+id/lstConcluido"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="4"
+                android:scrollbars="horizontal|vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
